@@ -32,25 +32,25 @@ def forca():
     for x in escondida:
         print(x,end=" ")
     while (not acertou and not errou):
-        chute = input("\nQual letra quer verificar? ").lower()
+        chute = input("\nQual letra quer verificar? ").upper()
         index = 0
         if len(chute) != 1:
             print("Você deve digitar uma e apenas uma letra.")
             continue
-        for letra in palavra_secreta:
+        for letra in palavra_secreta.upper():
             if chute == letra:
                 print(f"Encontrei a letra {chute} na posição {index}.")
                 escondida[index] = chute
             index += 1
-        if palavra_secreta.find(chute) == -1:
+        if palavra_secreta.upper().find(chute) == -1:
             print("Não. Essa letra eu não encontrei.")
             erros += 1
             erradas += chute + " "
-            print("\nSeus erros até agora: ",erradas.upper(),end=" ")
+            print("\nSeus erros até agora: ",erradas,end=" ")
             print()
             if erros >= 12:
                 print("GAME OVER. VOCÊ NÃO CONSEGUIU!")
-                print(f'A fruta era {palavra_secreta}')
+                print(f'A fruta era {palavra_secreta.upper()}')
                 break
         novo_result = ""
         for i in escondida:
