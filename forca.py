@@ -11,17 +11,17 @@ def forca():
             arquivo = open("palavras.txt", "r")
             break
         elif dificuldade == 2:
-            arquivo = open("palavras.txt", "r")
+            arquivo = open("palavras2.txt", "r")
             break
         elif dificuldade == 3:
-            arquivo = open("palavras.txt", "r")
+            arquivo = open("palavras3.txt", "r")
             break
         else:
             print("Não entendi. Digite 1, 2 ou 3.")
     palavras = []
     for linha in arquivo:
         palavras.append(linha)
-    palavra_secreta = palavras[randint(0,len(palavras))]
+    palavra_secreta = palavras[randint(1,len(palavras))]
 
     acertou = False
     errou = False
